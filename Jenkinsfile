@@ -35,11 +35,13 @@ pipeline{
         }
         stage('Veracode Analisys'){
             steps{
-                veracode applicationName: 'Application Tasks - Demo', criticality: 'VeryHigh', fileNamePattern: '', replacementPattern: '', sandboxName: 'sb-application-tasks', scanExcludesPattern: '', scanIncludesPattern: '', scanName: '$buildnumber', teams: '', uploadExcludesPattern: '', uploadIncludesPattern: '**/**.war', vid: '9e58155a16086227d811ed1dd9d520a3', vkey: '697e8b3b1a7e64b1b96ddd7a5c9db95bbc61a5ac07ae93be99d18aef42d6973d9faaae07d0a1fa60902d6045d556198a0095789136a1820ac94bb7d02d20da72', waitForScan: true
+                //veracode applicationName: 'Application Tasks - Demo', criticality: 'VeryHigh', fileNamePattern: '', replacementPattern: '', sandboxName: 'sb-application-tasks', scanExcludesPattern: '', scanIncludesPattern: '', scanName: '$buildnumber', teams: '', uploadExcludesPattern: '', uploadIncludesPattern: '**/**.war', vid: '9e58155a16086227d811ed1dd9d520a3', vkey: '697e8b3b1a7e64b1b96ddd7a5c9db95bbc61a5ac07ae93be99d18aef42d6973d9faaae07d0a1fa60902d6045d556198a0095789136a1820ac94bb7d02d20da72', waitForScan: true
+                veracode applicationName: 'Application Tasks - Demo', criticality: 'VeryHigh', scanName: '$buildnumber', timeout: 60, uploadIncludesPattern: '**/**.war', vid: '9e58155a16086227d811ed1dd9d520a3', vkey: '697e8b3b1a7e64b1b96ddd7a5c9db95bbc61a5ac07ae93be99d18aef42d6973d9faaae07d0a1fa60902d6045d556198a0095789136a1820ac94bb7d02d20da72', waitForScan: true
             }
         }
     }
 }
+
 
 
 
